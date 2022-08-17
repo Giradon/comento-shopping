@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="App">
       <Navigation />
-      프로젝트 시작</div>
+      코멘토 쇼핑</div>
   );
 }
 
