@@ -22,4 +22,6 @@ align-items: center;
 text-align: center;
 `;
 
+
+
 export default Navigation;
