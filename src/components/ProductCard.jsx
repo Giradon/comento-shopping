@@ -1,13 +1,17 @@
 import styled from "styled-components";
-const ProductCard = ({ name, description, thumbnail }) => {
+const ProductCard = ({ name, description, thumbnail, onClick }) => {
   return (
-    <div>
+    <ProductCardStyled onClick={onClick}>
       <img width="200" src={thumbnail} alt={name} />
       <ProductName>{name}</ProductName>
       <ProductDesc>{description}</ProductDesc>
-    </div>
+    </ProductCardStyled>
   );
 };
+
+const ProductCardStyled = styled.div`
+  padding-bottom: 40px;
+`;
 
 const ProductName = styled.div`
   font-weight: 700;

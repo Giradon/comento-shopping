@@ -4,11 +4,12 @@ import ProductCard from "../components/ProductCard";
 import styled from "styled-components";
 import { mockTheme1Produdcts, mockTheme2Produdcts } from "../data/mockData";
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   // 다시 렌더링되는 조건(state)
   const [products, setProducts] = useState();
-
+  const navigate = useNavigate();
   const onClickThemeButton = (themeId) => {
     if (themeId === 1) {
       setProducts(mockTheme1Produdcts);
@@ -45,6 +46,7 @@ const Home = () => {
         {products ? (
           products.map((product) => (
             <ProductCard
+              onClick={() => navigate(`product/${product.id}`)}
               key={product.id}
               name={product.name}
               description={product.description}
@@ -73,7 +75,6 @@ const Grayline = styled.div`
 
 const ProductSection = styled.div`
   padding: 24px;
-  position: absolute;
 `;
 
 export default Home;
